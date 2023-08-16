@@ -1,0 +1,133 @@
+.btn {
+  @apply font-semibold no-underline gap-2;
+
+  border-width: var(--border-btn, 1px);
+
+  /** hover and focus states */
+  &:active:hover,
+  &:active:focus {
+    transform: scale(var(--btn-focus-scale, 0.97));
+  }
+
+  /* default variant */
+  & {
+    @apply no-underline;
+
+    color: var(--th-white);
+    background: var(--th-light-gray);
+
+    @media (hover: hover) {
+      &:hover {
+        /* @apply bg-base-300; */
+      }
+    }
+
+    &-active {
+      /* @apply bg-base-300; */
+    }
+
+    &:focus-visible {
+      @apply outline outline-2 outline-offset-2;
+    }
+  }
+
+  /* primary variant */
+  &-primary {
+    /* @apply border-primary bg-primary text-primary-content outline-primary; */
+
+    @media (hover: hover) {
+      &:hover {
+        /* @apply border-primary-focus bg-primary-focus; */
+      }
+    }
+  }
+
+  /* secondary variant */
+  &-secondary {
+    /* @apply border-secondary bg-secondary text-secondary-content outline-secondary; */
+
+    @media (hover: hover) {
+      &:hover {
+        /* @apply border-secondary-focus bg-secondary-focus; */
+      }
+    }
+  }
+
+  &-error {
+    /* @apply border-error bg-error text-error-content outline-error; */
+
+    @media (hover: hover) {
+      &:hover {
+        /* @apply border-error bg-error; */
+      }
+    }
+  }
+
+  /* outline modifier */
+  &-outline {
+    /* @apply border-current bg-transparent text-base-content shadow-none; */
+
+    @media (hover: hover) {
+      &:hover {
+        /* @apply border-base-content bg-base-content text-base-100; */
+      }
+    }
+
+    &.btn-primary {
+      @apply text-primary;
+
+      @media (hover: hover) {
+        &:hover {
+          /* @apply border-primary-focus bg-primary-focus text-primary-content; */
+        }
+      }
+    }
+
+    &.btn-secondary {
+      @apply text-secondary;
+
+      @media (hover: hover) {
+        &:hover {
+          /* @apply border-secondary-focus bg-secondary-focus text-secondary-content; */
+        }
+      }
+    }
+
+    &.btn-error {
+      /* @apply text-error; */
+
+      @media (hover: hover) {
+        &:hover {
+          /* @apply border-error bg-error text-error-content; */
+        }
+      }
+    }
+  }
+
+  /* disabled state */
+  &.btn-disabled,
+  &[disabled],
+  &:disabled {
+    /* @apply border-opacity-0 bg-neutral bg-opacity-20 text-base-content text-opacity-20; */
+  }
+
+  @media (hover: hover) {
+    &-disabled:hover,
+    &[disabled]:hover,
+    &:disabled:hover {
+      /* @apply border-opacity-0 bg-neutral bg-opacity-20 text-base-content text-opacity-20; */
+    }
+  }
+}
+
+/* group */
+.btn-group {
+  & > input[type='radio']:checked.btn,
+  & > .btn-active {
+    /* @apply border-primary bg-primary text-primary-content; */
+
+    &:focus-visible {
+      /* @apply outline outline-2 outline-primary; */
+    }
+  }
+}

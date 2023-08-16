@@ -1,0 +1,8 @@
+/** ThaiUI variables **/
+@import './variables.css';
+
+/** Tailwind Components */
+@import './components/buttons.css';
+
+/** Tailwind Base */
+@tailwind base;
